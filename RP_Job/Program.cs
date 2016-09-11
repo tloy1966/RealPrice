@@ -9,17 +9,20 @@ namespace RP_Job
     class Program
     {
         static string strRPFolder = @"D:\7RealPrice";
-        static string testStr = @"D:\7RealPrice\2016S2\A_lvr_land_A.CSV";
+        static string testStr = @"D:\7RealPrice\2016S2\A_lvr_land_A.xls";
         static void Main(string[] args)
         {
-            SqlControl.testConn();
-            //testGetCityCode();
-
+            var lstPath = GetData.GetFiles(strRPFolder,".xls");
+            foreach (var file in lstPath)
+            {
+                GetData.ReadXLSAndInsert(file);
+            }
+            
             Console.ReadLine(); 
         }
         static void testGetCityCode()
         {
-            Debug.WriteLine(GetData.GetFiles(strRPFolder,".csv"));
+            Debug.WriteLine(GetData.GetFiles(Autho.LocalData.strCSV_Folder, ".xls"));
         }
     }
 }

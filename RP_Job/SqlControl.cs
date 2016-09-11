@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 namespace RP_Job
@@ -25,9 +26,25 @@ namespace RP_Job
             }
             return true;
         }
-        public void InsertData()
+        static public void InsertDtData(DataTable dt)
         {
-
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Autho.Azure.conn))
+                {
+                    cn.Open();
+                    using (SqlBulkCopy bc = new SqlBulkCopy(cn))
+                    {
+                        bc.DestinationTableName = "";
+                        bc.WriteToServer(dt);
+                    }
+                }
+            }
+            catch (Exception InsertDtData)
+            {
+                Console.WriteLine(InsertDtData.Message);
+                Console.ReadLine();
+            }
         }
     }
 }
