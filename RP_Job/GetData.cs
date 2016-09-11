@@ -26,7 +26,6 @@ namespace RP_Job
             {
 
                 DataTable dt = Model.RPModel.CreateMainData();
-                int iLastCol = 28;
                 var sheet = wk.GetSheet("不動產買賣");
                 for (int i = 2; i <= sheet.LastRowNum; i++)
                 {
@@ -121,6 +120,48 @@ namespace RP_Job
             }
             return null;
         }
-
+        static private dynamic TypeCheck(string val, string inType)
+        {
+            if (inType == "int")
+            {
+                int iOut;
+                if (int.TryParse(val, out iOut))
+                {
+                    return iOut;
+                }
+                else
+                {
+                    return DBNull.Value;
+                }
+            }
+            else if (inType=="decimal")
+            {
+                decimal dOut;
+                if (decimal.TryParse(val, out dOut))
+                {
+                    return dOut;
+                }
+                else
+                {
+                    return DBNull.Value;
+                }
+            }
+            else if (inType == "datetime")
+            {
+                DateTime dt;
+                if(DateTime.TryParse(val,out dt))
+                {
+                    return dt;
+                }
+                else
+                {
+                    return DBNull.Value;
+                }
+            }
+            else
+            {
+                return DBNull.Value;
+            }
+        }
     }
 }
