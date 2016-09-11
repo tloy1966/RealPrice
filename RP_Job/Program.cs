@@ -12,7 +12,8 @@ namespace RP_Job
         static string testStr = @"D:\7RealPrice\2016S2\A_lvr_land_A.CSV";
         static void Main(string[] args)
         {
-            testGetCityCode();
+            SqlControl.testConn();
+            //testGetCityCode();
 
             Console.ReadLine(); 
         }
