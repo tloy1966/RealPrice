@@ -14,12 +14,13 @@ namespace RP_Job.Model
             dt.Columns.Add("ID", typeof(int));
             dt.Columns.Add("City", typeof(string));
             dt.Columns.Add("SellType", typeof(string));
-            dt.Columns.Add("CASE_T", typeof(string));
             dt.Columns.Add("DISTRICT", typeof(string));
-            dt.Columns.Add("CASE_F", typeof(string));
-
+            dt.Columns.Add("CASE_T", typeof(string));
             dt.Columns.Add("LOCATION", typeof(string));
             dt.Columns.Add("LANDA", typeof(decimal));
+            dt.Columns.Add("CASE_F", typeof(string));
+
+            dt.Columns.Add("LANDA_X", typeof(string));
             dt.Columns.Add("LANDA_Z", typeof(string));
             dt.Columns.Add("SDATE", typeof(string));
             dt.Columns.Add("SCNT", typeof(string));
@@ -42,7 +43,6 @@ namespace RP_Job.Model
             dt.Columns.Add("TPRICE", typeof(int));
             dt.Columns.Add("UPRICE", typeof(decimal));
 
-            dt.Columns.Add("UPNOTE", typeof(string));
             dt.Columns.Add("PARKTYPE", typeof(string));
             dt.Columns.Add("PAREA", typeof(decimal));
             dt.Columns.Add("PPRICE", typeof(decimal));
@@ -52,14 +52,15 @@ namespace RP_Job.Model
         }
         public enum DBCol
         {
-            ID = -1,
-            City = 0,
+            ID = -2,
+            City = -1,
+            DISTRICT = 0,
             CASE_T = 1,
-            DISTRICT = 2,
-            CASE_F = 3,
-            LOCATION = 4,
-            LANDA = 5,
+            LOCATION = 2,
+            LANDA = 3,
+            CASE_F = 4,
 
+            LANDA_X = 5,
             LANDA_Z = 6,
             SDATE = 7,
             SCNT = 8,
@@ -78,16 +79,15 @@ namespace RP_Job.Model
             BUILD_P = 19,
             RULE = 20,
 
-            BUILD_C = 21,
-            TPRICE = 22,
-            UPRICE = 23,
-            UPNOTE = 24,
-            PARKTYPE = 25,
+            //BUILD_C = 21,
+            TPRICE = 21,
+            UPRICE = 22,
+            PARKTYPE = 23,
 
-            PAREA = 26,
-            PPRICE = 27,
-            RMNOTE = 28,
-            ID2 = 29
+            PAREA = 24,
+            PPRICE = 25,
+            RMNOTE = 26,
+            ID2 = 27
         }
     }
 }

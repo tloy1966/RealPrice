@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Threading;
 namespace RP_Job
 {
     class Program
@@ -16,6 +17,8 @@ namespace RP_Job
             foreach (var file in lstPath)
             {
                 GetData.ReadXLSAndInsert(file);
+                Console.WriteLine(file);
+                Thread.Sleep(5000);
             }
             
             Console.ReadLine(); 
