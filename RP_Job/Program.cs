@@ -18,7 +18,7 @@ namespace RP_Job
             {
                 GetData.ReadXLSAndInsert(file);
                 Console.WriteLine(file);
-                Thread.Sleep(5000);
+                Thread.Sleep(1000);
             }
             
             Console.ReadLine(); 
