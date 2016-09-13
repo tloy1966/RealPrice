@@ -44,54 +44,64 @@ namespace RP_Job
                 {
                     return;
                 }
-                
+
+                Console.WriteLine("Processing");
                 for (int i = 2; i <= sheet.LastRowNum; i++)
                 {
+                    Console.Write($"{i}, ");
+                    var nowRow = sheet.GetRow(i);
+                    var t = nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_T)];
+                    if (string.IsNullOrEmpty(nowRow.Cells[(int)(Model.RPModel.DBCol.DISTRICT)].ToString()))
+                    {
+                        continue;
+                    }
                     var dr = dt.NewRow();
                     //dr[0] = ""; id
                     var CityCodeAndSellType = GetCityandTypeCode(strXlsPath);
                     dr[1] = CityCodeAndSellType.Item1;
                     dr[2] = CityCodeAndSellType.Item2;
-                    var nowRow = sheet.GetRow(i);
-                    dr[Model.RPModel.DBCol.CASE_T.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_T)];
-                    dr[Model.RPModel.DBCol.DISTRICT.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.DISTRICT)];
-                    dr[Model.RPModel.DBCol.LOCATION.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.LOCATION)];
-                    dr[Model.RPModel.DBCol.LANDA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LANDA)].ToString(), "decimal");
-                    dr[Model.RPModel.DBCol.CASE_F.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_F)];
+                    dr[Model.RPModel.DBCol.CASE_T.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_T)].ToString(), "string", 50);
+                    dr[Model.RPModel.DBCol.DISTRICT.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.DISTRICT)].ToString(), "string", 50);
+                    dr[Model.RPModel.DBCol.LOCATION.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LOCATION)].ToString(), "string", 400);
+                    dr[Model.RPModel.DBCol.LANDA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LANDA)].ToString(), "decimal", 0);
+                    dr[Model.RPModel.DBCol.CASE_F.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_F)].ToString(), "string", 50);
 
-                    dr[Model.RPModel.DBCol.LANDA_X.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.LANDA_X)];
-                    dr[Model.RPModel.DBCol.LANDA_Z.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.LANDA_Z)];
-                    dr[Model.RPModel.DBCol.SDATE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.SDATE)].ToString(), "datetime");// nowRow.Cells[(int)(Model.RPModel.DBCol.SDATE)].ToString().Insert(3, "-").Insert(6, "-");//[Model.RPModel.DBCol.SDATE.ToString().Insert(3, "-").Insert(6, "-")]).Date;
-                    dr[Model.RPModel.DBCol.SCNT.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.SCNT)];
-                    dr[Model.RPModel.DBCol.SBUILD.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.SBUILD)];
-                    dr[Model.RPModel.DBCol.TBUILD.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.TBUILD)];
+                    dr[Model.RPModel.DBCol.LANDA_X.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LANDA_X)].ToString(), "string", 50);
+                    dr[Model.RPModel.DBCol.LANDA_Z.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LANDA_Z)].ToString(), "string", 50);
+                    dr[Model.RPModel.DBCol.SDATE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.SDATE)].ToString(), "datetime", 0);// nowRow.Cells[(int)(Model.RPModel.DBCol.SDATE)].ToString().Insert(3, "-").Insert(6, "-");//[Model.RPModel.DBCol.SDATE.ToString().Insert(3, "-").Insert(6, "-")]).Date;
+                    dr[Model.RPModel.DBCol.SCNT.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.SCNT)].ToString(), "string", 200);
+                    dr[Model.RPModel.DBCol.SBUILD.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.SBUILD)].ToString(), "string", 200);
+                    dr[Model.RPModel.DBCol.TBUILD.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.TBUILD)].ToString(), "string", 50);
 
-                    dr[Model.RPModel.DBCol.BUITYPE.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.BUITYPE)];
-                    dr[Model.RPModel.DBCol.PBUILD.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.PBUILD)];
-                    dr[Model.RPModel.DBCol.MBUILD.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.MBUILD)];
-                    dr[Model.RPModel.DBCol.FDATE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.FDATE)].ToString(), "datetime");
-                    dr[Model.RPModel.DBCol.FAREA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.FAREA)].ToString(), "decimal");
+                    dr[Model.RPModel.DBCol.BUITYPE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUITYPE)].ToString(), "string", 200);
+                    dr[Model.RPModel.DBCol.PBUILD.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PBUILD)].ToString(), "string", 50);
+                    dr[Model.RPModel.DBCol.MBUILD.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.MBUILD)].ToString(), "string", 300);
+                    dr[Model.RPModel.DBCol.FDATE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.FDATE)].ToString(), "datetime", 0);
+                    dr[Model.RPModel.DBCol.FAREA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.FAREA)].ToString(), "decimal", 0);
 
-                    dr[Model.RPModel.DBCol.BUILD_R.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_R)].ToString(), "int");
-                    dr[Model.RPModel.DBCol.BUILD_L.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_L)].ToString(), "int");
-                    dr[Model.RPModel.DBCol.BUILD_B.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_B)].ToString(), "int");
-                    dr[Model.RPModel.DBCol.BUILD_P.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_P)];
-                    dr[Model.RPModel.DBCol.RULE.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.RULE)];
+                    dr[Model.RPModel.DBCol.BUILD_R.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_R)].ToString(), "int", 0);
+                    dr[Model.RPModel.DBCol.BUILD_L.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_L)].ToString(), "int", 0);
+                    dr[Model.RPModel.DBCol.BUILD_B.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_B)].ToString(), "int", 0);
+                    dr[Model.RPModel.DBCol.BUILD_P.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_P)].ToString(), "string", 50);
+                    dr[Model.RPModel.DBCol.RULE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.RULE)].ToString(), "string", 50);
 
                     //dr[Model.RPModel.DBCol.BUILD_C.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_C)];
-                    dr[Model.RPModel.DBCol.TPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.TPRICE)].ToString(), "int");
-                    dr[Model.RPModel.DBCol.UPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.UPRICE)].ToString(), "decimal");
+                    dr[Model.RPModel.DBCol.TPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.TPRICE)].ToString(), "int", 0);
+                    dr[Model.RPModel.DBCol.UPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.UPRICE)].ToString(), "decimal", 0);
                     //dr[Model.RPModel.DBCol.UPNOTE.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.UPNOTE)];
-                    dr[Model.RPModel.DBCol.PARKTYPE.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.PARKTYPE)];
+                    dr[Model.RPModel.DBCol.PARKTYPE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PARKTYPE)].ToString(), "string", 50);
 
-                    dr[Model.RPModel.DBCol.PAREA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PAREA)].ToString(), "decimal");
-                    dr[Model.RPModel.DBCol.PPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PPRICE)].ToString(), "decimal");
-                    dr[Model.RPModel.DBCol.RMNOTE.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.RMNOTE)];
-                    dr[Model.RPModel.DBCol.ID2.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.ID2)];
+                    dr[Model.RPModel.DBCol.PAREA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PAREA)].ToString(), "decimal", 0);
+                    dr[Model.RPModel.DBCol.PPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PPRICE)].ToString(), "int", 0);
+                    dr[Model.RPModel.DBCol.RMNOTE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.RMNOTE)].ToString(), "string", 400);
+                    dr[Model.RPModel.DBCol.ID2.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2)].ToString(), "string", 400);
                     dt.Rows.Add(dr);
                 }
                 if (dt.Rows.Count > 0)
                 {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("InsertDtData");
                     SqlControl.InsertDtData(dt);
                 }
             }
@@ -101,7 +111,10 @@ namespace RP_Job
                 Console.WriteLine(ee.StackTrace);
                 Debug.WriteLine(ee.StackTrace);
             }
-            
+            finally
+            {
+                wk = null;
+            }
         }
         static public List<string> GetFiles(string strFolder, string strFilter)
         {
@@ -139,8 +152,12 @@ namespace RP_Job
             }
             return null;
         }
-        static private dynamic TypeCheck(string val, string inType)
+        static private dynamic TypeCheck(string val, string inType, int iLength)
         {
+            if (val.Length == 0)
+            {
+                return DBNull.Value;
+            }
             if (inType == "int")
             {
                 int iOut;
@@ -153,7 +170,7 @@ namespace RP_Job
                     return DBNull.Value;
                 }
             }
-            else if (inType=="decimal")
+            else if (inType == "decimal")
             {
                 decimal dOut;
                 if (decimal.TryParse(val, out dOut))
@@ -167,18 +184,30 @@ namespace RP_Job
             }
             else if (inType == "datetime")
             {
-                DateTime dt;
-                if (val.Length == 0)
+                if (val.Length >7 || val.Length<6)
                 {
+                    Console.WriteLine($"{val} datetime convert error");
                     return DBNull.Value;
                 }
-                if(DateTime.TryParse(val.Insert(3, "-").Insert(6, "-"), out dt))
+                DateTime dt;
+                if (DateTime.TryParse(val.Insert(3, "-").Insert(6, "-"), out dt))
                 {
                     return dt.AddYears(1911);
                 }
                 else
                 {
                     return DBNull.Value;
+                }
+            }
+            else if (inType == "string")
+            {
+                if (val.Length > iLength)
+                {
+                    return val.Substring(0,iLength);
+                }
+                else
+                {
+                    return val;
                 }
             }
             else

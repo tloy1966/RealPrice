@@ -45,7 +45,7 @@ namespace RP_Job.Model
 
             dt.Columns.Add("PARKTYPE", typeof(string));
             dt.Columns.Add("PAREA", typeof(decimal));
-            dt.Columns.Add("PPRICE", typeof(decimal));
+            dt.Columns.Add("PPRICE", typeof(int));
             dt.Columns.Add("RMNOTE", typeof(string));
             dt.Columns.Add("ID2", typeof(string));
             return dt;

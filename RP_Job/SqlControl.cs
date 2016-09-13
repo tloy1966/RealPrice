@@ -35,7 +35,6 @@ namespace RP_Job
                     cn.Open();
                     using (SqlBulkCopy bc = new SqlBulkCopy(cn))
                     {
-                        bc.BatchSize = 500;
                         bc.DestinationTableName = "MainData";
                         bc.WriteToServer(dt);
                     }

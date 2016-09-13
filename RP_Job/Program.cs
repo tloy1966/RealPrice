@@ -5,27 +5,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Threading;
+using System.IO;
 namespace RP_Job
 {
     class Program
     {
-        static string strRPFolder = @"D:\7RealPrice";
-        static string testStr = @"D:\7RealPrice\2016S2\A_lvr_land_A.xls";
         static void Main(string[] args)
         {
-            var lstPath = GetData.GetFiles(strRPFolder,".xls");
+            GO();
+            //testGetCityCode();
+            Console.ReadLine(); 
+        }
+        static void testGetCityCode()
+        {
+            var lstPath = GetData.GetFiles(Path.Combine(Directory.GetCurrentDirectory()), ".xls");
             foreach (var file in lstPath)
             {
                 GetData.ReadXLSAndInsert(file);
                 Console.WriteLine(file);
                 Thread.Sleep(1000);
             }
-            
-            Console.ReadLine(); 
+
+            Console.ReadLine();
         }
-        static void testGetCityCode()
+
+        static void GO()
         {
-            Debug.WriteLine(GetData.GetFiles(Autho.LocalData.strCSV_Folder, ".xls"));
+            var lstPath = GetData.GetFiles(Autho.LocalData.strCSV_Folder, ".xls");
+            foreach (var file in lstPath)
+            {
+                GetData.ReadXLSAndInsert(file);
+                Console.WriteLine(file);
+                Thread.Sleep(1000);
+            }
+
+            Console.ReadLine();
         }
     }
 }
