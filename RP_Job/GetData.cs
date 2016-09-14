@@ -19,6 +19,7 @@ namespace RP_Job
         static public void ReadXLSAndInsert(string strXlsPath)
         {
             HSSFWorkbook wk;
+            ISheet sheet = null;
             using (FileStream fs = new FileStream(strXlsPath, FileMode.Open, FileAccess.ReadWrite))
             {
                 wk = new HSSFWorkbook(fs);
@@ -27,7 +28,6 @@ namespace RP_Job
             {
 
                 DataTable dt = Model.RPModel.CreateMainData();
-                ISheet sheet = null;
                 if (wk.GetSheet("不動產買賣") != null)
                 {
                     sheet = wk.GetSheet("不動產買賣");//預售屋買賣 不動產租賃
@@ -102,7 +102,13 @@ namespace RP_Job
                     Console.WriteLine("");
                     Console.WriteLine("");
                     Console.WriteLine("InsertDtData");
+                    Program.logger.Info($"Insert: {strXlsPath}, count = {sheet.LastRowNum}");
                     SqlControl.InsertDtData(dt);
+                }
+                else
+                {
+
+                    Program.logger.Info($"No data: {strXlsPath}, count = {sheet.LastRowNum}");
                 }
             }
             catch (Exception ee)
@@ -110,9 +116,13 @@ namespace RP_Job
                 Console.WriteLine(ee.Message);
                 Console.WriteLine(ee.StackTrace);
                 Debug.WriteLine(ee.StackTrace);
+                Program.logger.Error(ee.Message);
+                Program.logger.Error(ee.StackTrace);
+                Program.logger.Error(ee.Source);
             }
             finally
             {
+                sheet = null;
                 wk = null;
             }
         }

@@ -35,6 +35,7 @@ namespace RP_Job
                     cn.Open();
                     using (SqlBulkCopy bc = new SqlBulkCopy(cn))
                     {
+                        bc.BatchSize = 500;
                         bc.DestinationTableName = "MainData";
                         bc.WriteToServer(dt);
                     }
@@ -42,6 +43,9 @@ namespace RP_Job
             }
             catch (Exception InsertDtData)
             {
+                Program.logger.Error($"Insert error: {InsertDtData.Message}");
+                Program.logger.Error($"Insert error: {InsertDtData.StackTrace}");
+                Program.logger.Error($"Insert error: {InsertDtData.Source}");
                 Console.WriteLine(InsertDtData.Message);
                 Console.ReadLine();
             }

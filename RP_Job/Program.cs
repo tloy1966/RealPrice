@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
+using NLog;
 namespace RP_Job
 {
     class Program
     {
+        static public Logger logger = NLog.LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
-            //GO();
-            testGetCityCode();
+            GO();
+            //testGetCityCode();
             Console.ReadLine(); 
         }
         static void testGetCityCode()
@@ -21,12 +23,11 @@ namespace RP_Job
             var lstPath = GetData.GetFiles(Path.Combine(Directory.GetCurrentDirectory()), ".xls");
             foreach (var file in lstPath)
             {
+                logger.Info(file+" test start");
                 GetData.ReadXLSAndInsert(file);
-                Console.WriteLine(file);
-
+                logger.Info(file + " test done");
+                logger.Info("------------------------------------------");
             }
-
-            Console.ReadLine();
         }
 
         static void GO()
@@ -38,8 +39,6 @@ namespace RP_Job
                 Console.WriteLine(file);
                 Thread.Sleep(1000);
             }
-
-            Console.ReadLine();
         }
     }
 }
