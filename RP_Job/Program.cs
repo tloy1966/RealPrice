@@ -12,8 +12,8 @@ namespace RP_Job
     {
         static void Main(string[] args)
         {
-            GO();
-            //testGetCityCode();
+            //GO();
+            testGetCityCode();
             Console.ReadLine(); 
         }
         static void testGetCityCode()
@@ -23,7 +23,7 @@ namespace RP_Job
             {
                 GetData.ReadXLSAndInsert(file);
                 Console.WriteLine(file);
-                Thread.Sleep(1000);
+
             }
 
             Console.ReadLine();
@@ -31,7 +31,7 @@ namespace RP_Job
 
         static void GO()
         {
-            var lstPath = GetData.GetFiles(Autho.LocalData.strCSV_Folder, ".xls");
+            var lstPath = GetData.GetFiles(Directory.GetCurrentDirectory(), ".xls");
             foreach (var file in lstPath)
             {
                 GetData.ReadXLSAndInsert(file);
