@@ -32,7 +32,7 @@ namespace RP_Job
 
         static void GO()
         {
-            var lstPath = GetData.GetFiles(Directory.GetCurrentDirectory(), ".xls");
+            var lstPath = GetData.GetFiles(Autho.LocalData.strCSV_Folder, ".xls");
             foreach (var file in lstPath)
             {
                 GetData.ReadXLSAndInsert(file);
