@@ -16,6 +16,7 @@ namespace RP_WeeklyJob
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            //
         }
     }
 }
