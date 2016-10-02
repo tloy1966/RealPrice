@@ -24,7 +24,7 @@ namespace RP_Job
             foreach (var file in lstPath)
             {
                 logger.Info(file+" test start");
-                GetData.ReadXLSAndInsert(file);
+                GetData.ReadXLSAndInsert(file,true);
                 logger.Info(file + " test done");
                 logger.Info("------------------------------------------");
             }
@@ -35,7 +35,7 @@ namespace RP_Job
             var lstPath = GetData.GetFiles(Autho.LocalData.strCSV_Folder, ".xls");
             foreach (var file in lstPath)
             {
-                GetData.ReadXLSAndInsert(file);
+                GetData.ReadXLSAndInsert(file,true);
                 Console.WriteLine(file);
                 Thread.Sleep(1000);
             }

@@ -10,9 +10,9 @@ namespace RP_Job
 {
     class SqlControl
     {
-        static public bool testConn()
+        static public bool testConn(string strCn)
         {
-            using (SqlConnection cn = new SqlConnection(Autho.Azure.conn))
+            using (SqlConnection cn = new SqlConnection(strCn))
             {
                 try
                 {
@@ -26,11 +26,12 @@ namespace RP_Job
             }
             return true;
         }
-        static public void InsertDtData(DataTable dt)
+        static public void InsertDtData(string strCn, DataTable dt)
         {
             try
             {
-                using (SqlConnection cn = new SqlConnection(Autho.Azure.conn))
+                //Autho.Azure.conn
+                using (SqlConnection cn = new SqlConnection(strCn))
                 {
                     cn.Open();
                     using (SqlBulkCopy bc = new SqlBulkCopy(cn))

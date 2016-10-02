@@ -16,7 +16,7 @@ namespace RP_Job
     class GetData
     {
         static Regex rgx = new Regex(@"\b[A-Z]{1}_lvr_land_[A-Z]{1}", RegexOptions.IgnoreCase);
-        static public void ReadXLSAndInsert(string strXlsPath)
+        static public void ReadXLSAndInsert(string strXlsPath, bool isTest)
         {
             HSSFWorkbook wk;
             ISheet sheet = null;
@@ -103,7 +103,7 @@ namespace RP_Job
                     Console.WriteLine("");
                     Console.WriteLine("InsertDtData");
                     Program.logger.Info($"Insert: {strXlsPath}, count = {sheet.LastRowNum}");
-                    SqlControl.InsertDtData(dt);
+                    SqlControl.InsertDtData(Autho.Azure.getConnect(isTest),dt);
                 }
                 else
                 {
