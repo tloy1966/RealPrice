@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RealPrice" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=tcp:tloy1966.database.windows.net,1433;Initial Catalog=RealPrice;User ID=tloy1966;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="PR_SummaryData.Properties.Settings" SettingsPropertyName="RealPriceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MainData" Member="MainData">
+    <Type Name="MainData">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SellType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DISTRICT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CASE_T" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="LANDA" Type="System.Decimal" DbType="Decimal(16,2)" CanBeNull="true" />
+      <Column Name="CASE_F" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LANDA_X" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LANDA_Y" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SCNT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SBUILD" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TBUILD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BUITYPE" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PBUILD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MBUILD" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="FDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FAREA" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="BUILD_R" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUILD_L" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUILD_B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUILD_P" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[RULE]" Member="RULE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TPRICE" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UPRICE" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="PARKTYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PAREA" Type="System.Decimal" DbType="Decimal(16,2)" CanBeNull="true" />
+      <Column Name="PPRICE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RMNOTE" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="ID2" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SummaryData" Member="SummaryData">
+    <Type Name="SummaryData">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SellType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DISTRICT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CASE_T" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="SDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Avg" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
