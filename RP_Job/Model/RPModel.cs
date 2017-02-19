@@ -39,9 +39,10 @@ namespace RP_Job.Model
             dt.Columns.Add("BUILD_B", typeof(int));
             dt.Columns.Add("BUILD_P", typeof(string));
             dt.Columns.Add("RULE", typeof(string));//20
-            //dt.Columns.Add("BUILD_C", typeof(string));
+                                                   //dt.Columns.Add("BUILD_C", typeof(string));
 
 
+            dt.Columns.Add("FURNITURE", typeof(bool));
             dt.Columns.Add("TPRICE", typeof(int));
             dt.Columns.Add("UPRICE", typeof(decimal));
 
@@ -51,6 +52,7 @@ namespace RP_Job.Model
 
             dt.Columns.Add("RMNOTE", typeof(string));
             dt.Columns.Add("ID2", typeof(string));
+            dt.Columns.Add("isActive", typeof(bool));
             return dt;
         }
         public enum DBCol
@@ -82,15 +84,27 @@ namespace RP_Job.Model
             BUILD_P = 19,
             RULE = 20,
 
-            //BUILD_C = 21,
-            TPRICE = 21,
-            UPRICE = 22,
-            PARKTYPE = 23,
+            FURNITURE = 21,
 
-            PAREA = 24,
-            PPRICE = 25,
-            RMNOTE = 26,
-            ID2 = 27
+            TPRICE = 22,
+            UPRICE = 23,
+            PARKTYPE = 24,
+
+            PAREA = 25,
+            PPRICE = 26,
+            RMNOTE = 27,
+            ID2 = 28,
+            isActive = 29
+
+            /*Furniture_C = 21,
+            TPRICE_C = 22,
+            UPRICE_C = 23,
+            PARKTYPE_C = 24,
+            PAREA_C = 25,
+            PPRICE_C = 26,
+            RMNOTE_C = 27,
+            ID2_C = 28,
+            isActive_C = 29*/
         }
     }
 }

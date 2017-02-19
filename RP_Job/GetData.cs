@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.IO;
 using System.Data;
@@ -11,11 +10,14 @@ using System.Diagnostics;
 using NPOI.HSSF;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
+using NLog;
 namespace RP_Job
 {
     class GetData
     {
+        static Logger logger = NLog.LogManager.GetCurrentClassLogger();
         static Regex rgx = new Regex(@"\b[A-Z]{1}_lvr_land_[A-Z]{1}", RegexOptions.IgnoreCase);
+        static Regex rgxCheckLetters = new Regex(@"^[a-zA-Z0-9]+$");
         static public void ReadXLSAndInsert(string strXlsPath, bool isTest)
         {
             HSSFWorkbook wk;
@@ -23,32 +25,37 @@ namespace RP_Job
             using (FileStream fs = new FileStream(strXlsPath, FileMode.Open, FileAccess.ReadWrite))
             {
                 wk = new HSSFWorkbook(fs);
+                logger.Info("Path = "+strXlsPath);
             }
             try
             {
 
-                DataTable dt = Model.RPModel.CreateMainData();
                 if (wk.GetSheet("不動產買賣") != null)
                 {
                     sheet = wk.GetSheet("不動產買賣");//預售屋買賣 不動產租賃
+                    logger.Info("不動產買賣");
                 }
                 else if (wk.GetSheet("預售屋買賣") != null)
                 {
                     sheet = wk.GetSheet("預售屋買賣");
+                    logger.Info("不動產買賣");
                 }
                 else if (wk.GetSheet("不動產租賃") != null)
                 {
                     sheet = wk.GetSheet("不動產租賃");
+                    logger.Info("不動產買賣");
                 }
                 else
                 {
                     return;
                 }
-
+                logger.Info("Processing");
                 Console.WriteLine("Processing");
+
+                DataTable dt = Model.RPModel.CreateMainData();
                 for (int i = 2; i <= sheet.LastRowNum; i++)
                 {
-                    Console.Write($"{i}, ");
+                    
                     var nowRow = sheet.GetRow(i);
                     var t = nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_T)];
                     if (string.IsNullOrEmpty(nowRow.Cells[(int)(Model.RPModel.DBCol.DISTRICT)].ToString()))
@@ -62,7 +69,7 @@ namespace RP_Job
                     dr[2] = CityCodeAndSellType.Item2;
                     dr[Model.RPModel.DBCol.CASE_T.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_T)].ToString(), "string", 50);
                     dr[Model.RPModel.DBCol.DISTRICT.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.DISTRICT)].ToString(), "string", 50);
-                    dr[Model.RPModel.DBCol.LOCATION.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LOCATION)].ToString(), "string", 400);
+                    dr[Model.RPModel.DBCol.LOCATION.ToString()] = ((string)TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LOCATION)].ToString(), "string", 400)).Replace("~","-");
                     dr[Model.RPModel.DBCol.LANDA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.LANDA)].ToString(), "decimal", 0);
                     dr[Model.RPModel.DBCol.CASE_F.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.CASE_F)].ToString(), "string", 50);
 
@@ -85,29 +92,79 @@ namespace RP_Job
                     dr[Model.RPModel.DBCol.BUILD_P.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_P)].ToString(), "string", 50);
                     dr[Model.RPModel.DBCol.RULE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.RULE)].ToString(), "string", 50);
 
-                    //dr[Model.RPModel.DBCol.BUILD_C.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.BUILD_C)];
-                    dr[Model.RPModel.DBCol.TPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.TPRICE)].ToString(), "int", 0);
-                    dr[Model.RPModel.DBCol.UPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.UPRICE)].ToString(), "decimal", 0);
-                    //dr[Model.RPModel.DBCol.UPNOTE.ToString()] = nowRow.Cells[(int)(Model.RPModel.DBCol.UPNOTE)];
-                    dr[Model.RPModel.DBCol.PARKTYPE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PARKTYPE)].ToString(), "string", 50);
 
-                    dr[Model.RPModel.DBCol.PAREA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PAREA)].ToString(), "decimal", 0);
-                    dr[Model.RPModel.DBCol.PPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PPRICE)].ToString(), "int", 0);
-                    dr[Model.RPModel.DBCol.RMNOTE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.RMNOTE)].ToString(), "string", 400);
-                    dr[Model.RPModel.DBCol.ID2.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2)].ToString(), "string", 400);
+                    string tempID2 = "";
+
+                    if (CityCodeAndSellType.Item2 == "A")
+                    {
+                        /*DB col the same but excel not the same*/
+                        dr[Model.RPModel.DBCol.FURNITURE.ToString()] = 0;
+                        dr[Model.RPModel.DBCol.TPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.TPRICE) - 1].ToString(), "int", 0);
+                        dr[Model.RPModel.DBCol.UPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.UPRICE) - 1].ToString(), "decimal", 0);
+                        dr[Model.RPModel.DBCol.PARKTYPE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PARKTYPE) - 1].ToString(), "string", 50);
+
+                        dr[Model.RPModel.DBCol.PAREA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PAREA) - 1].ToString(), "decimal", 0);
+                        dr[Model.RPModel.DBCol.PPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PPRICE) - 1].ToString(), "int", 0);
+                        dr[Model.RPModel.DBCol.RMNOTE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.RMNOTE) - 1].ToString(), "string", 400);
+
+                        if (string.IsNullOrEmpty(TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2) - 1].ToString(), "string", 400)))
+                        {
+                            return;
+                        }
+
+                        dr[Model.RPModel.DBCol.ID2.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2) - 1].ToString(), "string", 400);
+                        var tempID = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2) - 1].ToString(), "letters", 0);
+                        if (tempID is DBNull)
+                        {
+                            dr[Model.RPModel.DBCol.isActive.ToString()] = 0;
+                        }
+                        else
+                        {
+                            dr[Model.RPModel.DBCol.isActive.ToString()] = 1;
+                            tempID2 = tempID;
+                        }
+                        
+                    }
+                    else if (CityCodeAndSellType.Item2 == "C")
+                    {
+                        dr[Model.RPModel.DBCol.FURNITURE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.FURNITURE)].ToString(), "bool", 0);
+                        dr[Model.RPModel.DBCol.TPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.TPRICE)].ToString(), "int", 0);
+                        dr[Model.RPModel.DBCol.UPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.UPRICE)].ToString(), "decimal", 0);
+                        dr[Model.RPModel.DBCol.PARKTYPE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PARKTYPE)].ToString(), "string", 50);
+
+                        dr[Model.RPModel.DBCol.PAREA.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PAREA)].ToString(), "decimal", 0);
+                        dr[Model.RPModel.DBCol.PPRICE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.PPRICE)].ToString(), "int", 0);
+                        dr[Model.RPModel.DBCol.RMNOTE.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.RMNOTE)].ToString(), "string", 400);
+
+                        dr[Model.RPModel.DBCol.ID2.ToString()] = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2)].ToString(), "string", 400);
+                        if (string.IsNullOrEmpty(TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2)].ToString(), "string", 400)))
+                        {
+                            return;
+                        }
+                        var tempID = TypeCheck(nowRow.Cells[(int)(Model.RPModel.DBCol.ID2)].ToString(), "letters", 0);
+                        if (tempID is DBNull)
+                        {
+                            dr[Model.RPModel.DBCol.isActive.ToString()] = 0;
+                        }
+                        else
+                        {
+                            dr[Model.RPModel.DBCol.isActive.ToString()] = 1;
+                            tempID2 = tempID;
+                        }
+                    }
+
+
                     dt.Rows.Add(dr);
+                    
                 }
                 if (dt.Rows.Count > 0)
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                    Console.WriteLine("InsertDtData");
+                    Console.WriteLine($"InsertDtData{strXlsPath}, rows count = {dt.Rows.Count}");
                     Program.logger.Info($"Insert: {strXlsPath}, count = {sheet.LastRowNum}");
-                    SqlControl.InsertDtData(Autho.Azure.getConnect(isTest),dt);
+                    SqlControl.InsertDtData(Autho.Azure.getConnect(isTest), dt);
                 }
                 else
                 {
-
                     Program.logger.Info($"No data: {strXlsPath}, count = {sheet.LastRowNum}");
                 }
             }
@@ -194,7 +251,7 @@ namespace RP_Job
             }
             else if (inType == "datetime")
             {
-                if (val.Length >7 || val.Length<6)
+                if (val.Length > 7 || val.Length < 6)
                 {
                     Console.WriteLine($"{val} datetime convert error");
                     return DBNull.Value;
@@ -213,11 +270,33 @@ namespace RP_Job
             {
                 if (val.Length > iLength)
                 {
-                    return val.Substring(0,iLength);
+                    return val.Substring(0, iLength);
                 }
                 else
                 {
                     return val;
+                }
+            }
+            else if (inType == "letters")
+            {
+                if (Regex.IsMatch(val, @"^[a-zA-Z0-9]+$"))
+                {
+                    return val;
+                }
+                else
+                {
+                    return DBNull.Value;
+                }
+            }
+            else if (inType == "bool")
+            {
+                if (val == "有" || val == "Y")
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
                 }
             }
             else

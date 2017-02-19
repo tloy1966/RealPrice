@@ -11,6 +11,8 @@ namespace RP_Job
 {
     class Program
     {
+        static readonly bool isTest = false;
+
         static public Logger logger = NLog.LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
@@ -20,7 +22,7 @@ namespace RP_Job
         }
         static void testGetCityCode()
         {
-            var lstPath = GetData.GetFiles(Path.Combine(Directory.GetCurrentDirectory()), ".xls");
+            var lstPath = GetData.GetFiles(Path.Combine(Directory.GetCurrentDirectory()), ".xls").OrderByDescending(o => o);
             foreach (var file in lstPath)
             {
                 logger.Info(file+" test start");
@@ -30,12 +32,13 @@ namespace RP_Job
             }
         }
 
+        //Type B not in ...............
         static void GO()
         {
-            var lstPath = GetData.GetFiles(Autho.LocalData.strCSV_Folder, ".xls");
+            var lstPath = GetData.GetFiles(Autho.LocalData.strXLSFolder_2, ".xls").OrderBy(o => o);
             foreach (var file in lstPath)
             {
-                GetData.ReadXLSAndInsert(file,true);
+                GetData.ReadXLSAndInsert(file, isTest);
                 Console.WriteLine(file);
                 Thread.Sleep(1000);
             }
