@@ -133,6 +133,7 @@
     <Compile Include="Autho\Azure.cs" />
     <Compile Include="Autho\LocalData.cs" />
     <Compile Include="GetData.cs" />
+    <Compile Include="Model\Para.cs" />
     <Compile Include="Model\RPModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

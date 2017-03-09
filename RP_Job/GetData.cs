@@ -18,7 +18,7 @@ namespace RP_Job
         static Logger logger = NLog.LogManager.GetCurrentClassLogger();
         static Regex rgx = new Regex(@"\b[A-Z]{1}_lvr_land_[A-Z]{1}", RegexOptions.IgnoreCase);
         static Regex rgxCheckLetters = new Regex(@"^[a-zA-Z0-9]+$");
-        static public void ReadXLSAndInsert(string strXlsPath, bool isTest)
+        static public void ReadXLSAndInsert(string strXlsPath, bool isTest, Model.Para.InsertMode mode)
         {
             HSSFWorkbook wk;
             ISheet sheet = null;
@@ -29,7 +29,6 @@ namespace RP_Job
             }
             try
             {
-
                 if (wk.GetSheet("不動產買賣") != null)
                 {
                     sheet = wk.GetSheet("不動產買賣");//預售屋買賣 不動產租賃
@@ -155,9 +154,15 @@ namespace RP_Job
 
 
                     dt.Rows.Add(dr);
-                    
+                    if (mode == Model.Para.InsertMode.OneByOne)
+                    {
+                        Console.WriteLine($"InsertDtData{strXlsPath}, rows count = {dt.Rows.Count}");
+                        Program.logger.Info($"Insert: {strXlsPath}, count = {sheet.LastRowNum}");
+                        SqlControl.InsertDtData(Autho.Azure.getConnect(isTest), dt);
+                        dt.Rows.Clear();
+                    }
                 }
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0 && mode== Model.Para.InsertMode.Bulk)
                 {
                     Console.WriteLine($"InsertDtData{strXlsPath}, rows count = {dt.Rows.Count}");
                     Program.logger.Info($"Insert: {strXlsPath}, count = {sheet.LastRowNum}");

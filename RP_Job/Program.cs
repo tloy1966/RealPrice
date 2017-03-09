@@ -16,7 +16,7 @@ namespace RP_Job
         static public Logger logger = NLog.LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
-            GO();
+            GetDataFromFile();
             //testGetCityCode();
             Console.ReadLine(); 
         }
@@ -33,15 +33,20 @@ namespace RP_Job
         }
 
         //Type B not in ...............
-        static void GO()
+        static void GetDataFromFile()
         {
             var lstPath = GetData.GetFiles(Autho.LocalData.strXLSFolder_2, ".xls").OrderBy(o => o);
             foreach (var file in lstPath)
             {
-                GetData.ReadXLSAndInsert(file, isTest);
+                GetData.ReadXLSAndInsert(file, isTest, Model.Para.InsertMode.OneByOne);
                 Console.WriteLine(file);
                 Thread.Sleep(1000);
             }
+        }
+
+        static void GetDataFromAPI()
+        {
+
         }
     }
 }
