@@ -18,6 +18,7 @@ namespace RP_Job
         static Logger logger = NLog.LogManager.GetCurrentClassLogger();
         static Regex rgx = new Regex(@"\b[A-Z]{1}_lvr_land_[A-Z]{1}", RegexOptions.IgnoreCase);
         static Regex rgxCheckLetters = new Regex(@"^[a-zA-Z0-9]+$");
+        //to do : long mathod
         static public void ReadXLSAndInsert(string strXlsPath, bool isTest, Model.Para.InsertMode mode)
         {
             HSSFWorkbook wk;
@@ -160,19 +161,22 @@ namespace RP_Job
                         continue;
                     }
                     dt.Rows.Add(dr);
-                    if (mode == Model.Para.InsertMode.OneByOne)
-                    {
-                        Console.WriteLine($"InsertDtData{strXlsPath}, rows count = {dt.Rows.Count}");
-                        Program.logger.Info($"Insert: {strXlsPath}, count = {sheet.LastRowNum}");
-                        SqlControl.InsertDtData(Autho.Azure.getConnect(isTest), dt);
-                        dt.Rows.Clear();
-                    }
                 }
                 if (dt.Rows.Count > 0 && mode== Model.Para.InsertMode.Bulk)
                 {
                     Console.WriteLine($"InsertDtData{strXlsPath}, rows count = {dt.Rows.Count}");
                     Program.logger.Info($"Insert: {strXlsPath}, count = {sheet.LastRowNum}");
-                    SqlControl.InsertDtData(Autho.Azure.getConnect(isTest), dt);
+                    try
+                    {
+                        SqlControl.InsertDtData(Autho.Azure.getConnect(isTest), dt);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Console.WriteLine("Path: "+strXlsPath);
+                        SqlControl.InsertRow(Autho.Azure.getConnect(isTest), dt);
+                    }
                 }
                 else
                 {

@@ -28,28 +28,46 @@ namespace RP_Job
         }
         static public void InsertDtData(string strCn, DataTable dt)
         {
-            try
+            using (SqlConnection cn = new SqlConnection(strCn))
             {
-                //Autho.Azure.conn
-                using (SqlConnection cn = new SqlConnection(strCn))
+                cn.Open();
+                using (SqlBulkCopy bc = new SqlBulkCopy(cn))
                 {
-                    cn.Open();
-                    using (SqlBulkCopy bc = new SqlBulkCopy(cn))
+                    bc.BulkCopyTimeout = 600;
+                    bc.BatchSize = 500;
+                    bc.DestinationTableName = "MainData";
+                    bc.WriteToServer(dt);
+                }
+            }
+        }
+        static public void InsertRow(string strCn, DataTable dt)
+        {
+            using (SqlConnection cn = new SqlConnection(strCn))
+            {
+                cn.Open();
+                using (SqlBulkCopy bc = new SqlBulkCopy(cn))
+                {
+                    bc.BulkCopyTimeout = 100;
+                    bc.BatchSize = 1;
+                    bc.DestinationTableName = "MainData";
+                    foreach (var dr in dt.Rows)
                     {
-                        bc.BulkCopyTimeout = 600;
-                        bc.BatchSize = 500;
-                        bc.DestinationTableName = "MainData";
-                        bc.WriteToServer(dt);
+                        try
+                        {
+                            var tmpDt = dt.Clone();
+                            tmpDt.Rows.Add(dr);
+                            bc.WriteToServer(tmpDt);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine( ex.Message);
+                        }
+                        
                     }
                 }
             }
-            catch (Exception InsertDtData)
-            {
-                Program.logger.Error($"Insert error: {InsertDtData.Message}");
-                Program.logger.Error($"Insert error: {InsertDtData.StackTrace}");
-                Program.logger.Error($"Insert error: {InsertDtData.Source}");
-                Console.WriteLine(InsertDtData.Message);
-            }
+            
         }
+
     }
 }

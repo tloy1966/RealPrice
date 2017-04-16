@@ -11,7 +11,7 @@ namespace RP_Job
 {
     class Program
     {
-        static readonly bool isTest = false;
+        static readonly bool isTest = true;
 
         static public Logger logger = NLog.LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
@@ -32,7 +32,6 @@ namespace RP_Job
             }
         }
 
-        //Type B not in ...............
         static void GetDataFromFile()
         {
             var lstPath = GetData.GetFiles(Autho.LocalData.strXLSFolder_2, ".xls").OrderBy(o => o);
@@ -42,11 +41,6 @@ namespace RP_Job
                 Console.WriteLine(file);
                 Thread.Sleep(1000);
             }
-        }
-
-        static void GetDataFromAPI()
-        {
-
         }
     }
 }
