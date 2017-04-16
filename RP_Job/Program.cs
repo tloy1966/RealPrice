@@ -26,7 +26,7 @@ namespace RP_Job
             foreach (var file in lstPath)
             {
                 logger.Info(file+" test start");
-                GetData.ReadXLSAndInsert(file,true);
+                GetData.ReadXLSAndInsert(file,true, Model.Para.InsertMode.OneByOne);
                 logger.Info(file + " test done");
                 logger.Info("------------------------------------------");
             }

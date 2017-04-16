@@ -61,6 +61,8 @@ namespace RP_Job
                     {
                         continue;
                     }
+
+                    
                     var dr = dt.NewRow();
                     //dr[0] = ""; id
                     var CityCodeAndSellType = GetCityandTypeCode(strXlsPath);
@@ -152,7 +154,11 @@ namespace RP_Job
                         }
                     }
 
-
+                    if (string.IsNullOrEmpty(tempID2))
+                    {
+                        Console.WriteLine("ID null");
+                        continue;
+                    }
                     dt.Rows.Add(dr);
                     if (mode == Model.Para.InsertMode.OneByOne)
                     {

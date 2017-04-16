@@ -49,7 +49,6 @@ namespace RP_Job
                 Program.logger.Error($"Insert error: {InsertDtData.StackTrace}");
                 Program.logger.Error($"Insert error: {InsertDtData.Source}");
                 Console.WriteLine(InsertDtData.Message);
-                Console.ReadLine();
             }
         }
     }

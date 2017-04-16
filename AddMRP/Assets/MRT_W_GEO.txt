@@ -1,0 +1,121 @@
+動物園站|24.998259|121.57943|ChIJFSERD2GqQjQRFfhHqMtlQRc|11656, Taiwan, Taipei City, Wenshan District, 新光路2段32號動物園站
+木柵|24.99824|121.573145|ChIJB_ERcWaqQjQRYNA4apNdSE8|116, Taiwan, Taipei City, Wenshan District, Muzha Road, Section 4, 135號木柵
+萬芳社區站|24.998585|121.568102|ChIJp1651m6qQjQRL6tKbxTXpY0|116, Taiwan, Taipei City, Wenshan District, 萬芳社區站
+捷運萬芳醫院站|24.9993886|121.5582008|ChIJ5yTVEhOqQjQRl7-9BKdjVFg|116, Taiwan, Taipei City, Wenshan District, Section 3, Xinglong Rd, 113號捷運萬芳醫院站
+辛亥|25.0052429|121.5570521|ChIJu6jFChWqQjQRHUmyx3cEX8A|116, Taiwan, Taipei City, Wenshan District, Section 4, Xinhai Road, 128號辛亥
+麟光站|25.018535|121.558791|ChIJPVHywTeqQjQRNickSxQCtgs|106, Taiwan, Taipei City, Da’an District, Section 3, Heping East Road, 410號麟光站
+六张犁站|25.023739|121.553004|ChIJA5Hi4TOqQjQR1d5jQGkBU3A|106, Taiwan, Taipei City, Da’an District, Section 3, Heping East Road, 410號六张犁站
+科技大樓站|25.026124|121.543437|ChIJDdDXHCyqQjQR0Y_Bhqp_oJ0|106, Taiwan, Taipei City, Da’an District, Section 2, Fuxing South Road, 235號科技大樓站
+大安站|25.0329282|121.543584|ChIJ4TkocNOrQjQRCAHSQZCAxB4|106, Taiwan, Taipei City, Da’an District, Section 4, Xinyi Rd, 2號大安站
+忠孝復興站|25.0409583|121.5437571|ChIJ5aXTptCrQjQRZmjgmU4h9Sk|Taiwan, Taipei City, Da’an District, 10654 忠孝 東路 3 段 302 號 10691 台北 市 大安 區 忠孝 東路 4 段 47 號忠孝復興站
+南京復興站|25.052241|121.5440405|ChIJk8Tv8t2rQjQRhjLuF1zoizE|10491, Taiwan, Taipei City, Zhongshan District, 南京復興站
+中山國中站|25.060848|121.544226|ChIJH73O8uSrQjQRCIu39beHvok|105, Taiwan, Taipei City, Songshan District, 中山國中站
+松山機場|25.063|121.551995|ChIJJ6afuvGrQjQRpsRYaAFpXR4|105, Taiwan, Taipei City, Songshan District, 松山機場
+大直站|25.079476|121.546894|ChIJ45EUwAWsQjQR4c98O70_H04|10491, Taiwan, Taipei City, Zhongshan District, 大直站
+劍南路站|25.084853|121.555592|ChIJEb0NuBOsQjQRjPoDfffWxXo|10491, Taiwan, Taipei City, Zhongshan District, 劍南路站
+西湖站|25.0821476|121.5672117|ChIJL3Ww7W6sQjQR5Ss0Y6FH8yA|114, Taiwan, Taipei City, Neihu District, 西湖站
+港墘|25.0800307|121.5750787|ChIJ48QKW2SsQjQRkJKSrz02ZC8|114, Taiwan, Taipei City, Neihu District, 港墘
+文德站|25.0785298|121.5850644|ChIJYXlQvYmsQjQRV9gSASUCAQ4|114, Taiwan, Taipei City, Neihu District, 文德站
+內湖站|25.08366|121.594407|ChIJCbOMWe2sQjQREmZ-AUyC67g|114, Taiwan, Taipei City, Neihu District, 內湖站
+大湖公園站|25.0838406|121.6021428|ChIJ5yiUqeusQjQRVeBtapp1o8w|114, Taiwan, Taipei City, Neihu District, 大湖公園站
+葫洲站|25.072701|121.607158|ChIJ1UfpvL2sQjQRpTLZt9K5wCk|114, Taiwan, Taipei City, Neihu District, 葫洲站
+東湖站|25.0671234|121.611452|ChIJG85PoaSsQjQRR26zKJgPMZo|114, Taiwan, Taipei City, Neihu District, 東湖站
+南港軟體園區站|25.059904|121.615952|ChIJ3XB1OqasQjQRFW4gNEKjKCA|115, Taiwan, Taipei City, Nangang District, 南港軟體園區站
+南港展覽館站|25.0554052|121.6178521|ChIJWQ7X8VerQjQRa16L1Bd_aa8|115, Taiwan, Taipei City, Nangang District, 南港展覽館站
+象山站|25.032765|121.570354|ChIJ_eP9zLGrQjQRmCnYNOvvs8o|110, Taiwan, Taipei City, Xinyi District, 象山站
+台北101/世貿站|25.0330575|121.5631862|ChIJiW9eYrarQjQR3aG-P4ODq_M|110, Taiwan, Taipei City, Xinyi District, 台北101/世貿站
+信義安和站|25.0330213|121.5531937|ChIJSVE4FcyrQjQRuQUTuyVC2u0|106, Taiwan, Taipei City, Da’an District, 信義安和站
+大安站|25.0329282|121.543584|ChIJ4TkocNOrQjQRCAHSQZCAxB4|106, Taiwan, Taipei City, Da’an District, Section 4, Xinyi Rd, 2號大安站
+大安森林公園站|25.033534|121.534869|ChIJh9adiH-pQjQRCkkUiYLZBCA|106, Taiwan, Taipei City, Da’an District, 大安森林公園站
+東門站|25.033841|121.528799|ChIJ58qEY4KpQjQRPxeOc0U0pak|10650, Taiwan, Taipei City, Da’an District, 信義路2段166號東門站
+中正紀念堂站|25.032729|121.51827|ChIJUcGqx56pQjQRQXwl7rqTxys|100, Taiwan, Taipei City, Zhongzheng District, 中正紀念堂站
+台大醫院|25.041256|121.51604|ChIJCenn7nSpQjQR_I73pnnJhFA|100, Taiwan, Taipei City, Zhongzheng District, 台大醫院
+捷運台北車站|25.04636|121.5176048|ChIJneUTn3KpQjQRGGR7w7CKOQg|10041, Taiwan, Taipei City, Zhongzheng District, 忠孝西路1段49號捷運台北車站
+中山|25.0523926|121.5203115|ChIJE-kmU2mpQjQRg3J0ihh6nvI|103, Taiwan, Taipei City, Datong District, 中山
+雙連站|25.0576464|121.5206046|ChIJpZy34mmpQjQRJkQZ9uRfl6c|10491, Taiwan, Taipei City, Zhongshan District, 雙連站
+捷運民權西路站|25.062905|121.519319|ChIJP-pgUEGpQjQR6gB8XD9FvFU|103, Taiwan, Taipei City, Datong District, 捷運民權西路站
+圓山站|25.071353|121.520118|ChIJOXm-1U6pQjQR7XGwntY6vH8|103, Taiwan, Taipei City, Datong District, Jiuquan Street, 9之1號圓山站
+劍潭站|25.084873|121.525077|ChIJa3NR3LGuQjQRD9luxlkVfro|111, Taiwan, Taipei City, Shilin District, 劍潭站
+士林站|25.093535|121.526229|ChIJwSViqKSuQjQR18H96pk4DU4|111, Taiwan, Taipei City, Shilin District, 士林站
+芝山站|25.1030598|121.5225139|ChIJ_d76_JauQjQR_QGQANF33hs|111, Taiwan, Taipei City, Shilin District, 芝山站
+明德站|25.10972|121.518848|ChIJZ4MPPJKuQjQRFFfRxNIUxq8|112, Taiwan, Taipei City, Beitou District, 明德站
+石牌|25.114523|121.515559|ChIJD2XnIY2uQjQRhmxwa7e9MHk|112, Taiwan, Taipei City, Beitou District, 石牌
+唭哩岸站|25.1208226|121.5062092|ChIJuwNH3fauQjQREm_h9W0M6II|112, Taiwan, Taipei City, Beitou District, 唭哩岸站
+奇岩站|25.125491|121.501132|ChIJW_B9cviuQjQR9JI_g0Job3w|112, Taiwan, Taipei City, Beitou District, Section 2, Sanhe St, 489號奇岩站
+北投站|25.13184|121.498632|ChIJ5T2xS1GuQjQRiDLONm47OEE|11246, Taiwan, Taipei City, Beitou District, Guangming Rd, 1號北投站
+新北投|25.1369429|121.5026492|ChIJhX4bRUWuQjQRVKzt2SEZC0g|112, Taiwan, Taipei City, Beitou District, Daye Rd, 700號新北投
+復興崗站|25.1375058|121.4854105|ChIJ-XF1ga6vQjQRvGo2cRqulvE|112, Taiwan, Taipei City, Beitou District, 復興崗站
+捷運忠義站|25.1310359|121.4731889|ChIJ_5l2PAqvQjQRnUl8UQZKdD4|112, Taiwan, Taipei City, Beitou District, 捷運忠義站
+關渡站|25.1256976|121.4670779|ChIJh82x3XKvQjQRBHPImmpVrEM|112, Taiwan, Taipei City, Beitou District, 關渡站
+竹圍站|25.13694|121.459479|ChIJKcr4c52vQjQR1lAzQI7obCY|251, Taiwan, New Taipei City, Tamsui District, 竹圍站
+紅樹林站|25.1546296|121.4588737|ChIJmyhbW5KvQjQRHJ2w0oRKjkc|251, Taiwan, New Taipei City, Tamsui District, 紅樹林站
+捷運淡水站|25.1678074|121.4455816|ChIJ3YC9glilQjQRxvedF6PFWVc|251, Taiwan, New Taipei City, Tamsui District, Zhongzheng Rd, 捷運淡水站
+新店站|24.9580525|121.5376788|ChIJUYb5-ocBaDQRFe6nORFZIqY|231, Taiwan, New Taipei City, Xindian District, 新店站
+新店區公所站|24.967393|121.541309|ChIJNRPzR4sBaDQR7FElnCEbUGY|231, Taiwan, New Taipei City, Xindian District, 新店區公所站
+七張站|24.9759375|121.5429193|ChIJjbKwLfEBaDQRa5omfaZ_Wbc|231, Taiwan, New Taipei City, Xindian District, Section 2, Beixin Rd, 150號23143 號七張站
+小碧潭站|24.971906|121.530338|ChIJ45PluBgCaDQRfTmiFW6no4Y|231, Taiwan, New Taipei City, Xindian District, 小碧潭站
+大坪林站|24.9827862|121.5410329|ChIJYwiMQPkBaDQRNpwrYbK82rg|23143, Taiwan, New Taipei City, Xindian District, Beixin Road190號大坪林站
+景美站|24.9928409|121.5409058|ChIJT5KOEAGqQjQRQ5N0MGFBJ88|116, Taiwan, Taipei City, Wenshan District, 羅斯福路6段216號景美站
+萬隆站|25.001853|121.539051|ChIJn37dFx2qQjQR4ytTaKwFYmA|116, Taiwan, Taipei City, Wenshan District, 萬隆站
+公館站|25.0147021|121.5348051|ChIJC46H_4qpQjQRe0EQLEuiSOk|100, Taiwan, Taipei City, Zhongzheng District, Section 4, Roosevelt Rd, 64之1號10091 之 號 B1公館站
+台電大樓站|25.0206828|121.5282101|ChIJiUprWY6pQjQRaT22VQKS7u4|106, Taiwan, Taipei City, Da’an District, 台電大樓站
+古亭站|25.0259788|121.5232495|ChIJS_msiZqpQjQRIHZ1h0nma3E|10084, Taiwan, Taipei City, Zhongzheng District, 羅斯福路二段36巷古亭站
+中正紀念堂站|25.032729|121.51827|ChIJUcGqx56pQjQRQXwl7rqTxys|100, Taiwan, Taipei City, Zhongzheng District, 中正紀念堂站
+小南門站|25.035546|121.510857|ChIJn74-D6GpQjQRYJ0BSWj_hi4|100, Taiwan, Taipei City, Zhongzheng District, 小南門站
+捷運西門站|25.0421738|121.5082927|ChIJE0ZOgAmpQjQRt-nR5SlhrYI|10042, Taiwan, Taipei City, Zhongzheng District, Baoqing Rd, 32-1號捷運西門站
+北門站|25.0493465|121.5102921|ChIJ-XhPiQ2pQjQR6YjSYT-C5WU|10341, Taiwan, Taipei City, Datong District, Tacheng St, 10號北門站
+中山|25.0523926|121.5203115|ChIJE-kmU2mpQjQRg3J0ihh6nvI|103, Taiwan, Taipei City, Datong District, 中山
+松江南京站|25.0512257|121.5327387|ChIJTXwdHGGpQjQRnfLEZSwuzU8|10491, Taiwan, Taipei City, Zhongshan District, 松江南京站
+南京復興站|25.052241|121.5440405|ChIJk8Tv8t2rQjQRhjLuF1zoizE|10491, Taiwan, Taipei City, Zhongshan District, 南京復興站
+捷運台北小巨蛋站|25.0514463|121.5507862|ChIJj51KzumrQjQR56km1rcHcuQ|10553, Taiwan, Taipei City, Songshan District, 南京東路4段10之1號捷運台北小巨蛋站
+南京三民站|25.0513994|121.5639809|ChIJtfB5Q5SrQjQRyz695tqOPvA|10569, Taiwan, Taipei City, Songshan District, 南京東路5段237號南京三民站
+捷運松山站|25.0498972|121.5774206|ChIJvwx2J5yrQjQRt_9-mJyEX6Q|10567, Taiwan, Taipei City, Songshan District, 八德路4段742號捷運松山站
+南勢角站|24.9901849|121.5088721|ChIJvXF2mXMCaDQRFkej6Zu9nhY|23566, Taiwan, New Taipei City, Zhonghe District, Jieyun Rd, 6號南勢角站
+景安站|24.9937541|121.5045919|ChIJaxubGHcCaDQRhWPv6VLmKAY|235, Taiwan, New Taipei City, Zhonghe District, 景安站
+永安市場站|25.0023271|121.5109121|ChIJzQLfNNypQjQR1IMeaR2onRo|235, Taiwan, New Taipei City, Zhonghe District, Zhonghe Road, 388號永安市場站
+頂溪站|25.014218|121.5153677|ChIJw5b1YOqpQjQRsP6_XIjKGaI|23445, Taiwan, New Taipei City, Yonghe District, Sec. 2, Yonghe Rd.168號頂溪站
+古亭站|25.0259788|121.5232495|ChIJS_msiZqpQjQRIHZ1h0nma3E|10084, Taiwan, Taipei City, Zhongzheng District, 羅斯福路二段36巷古亭站
+東門站|25.033841|121.528799|ChIJ58qEY4KpQjQRPxeOc0U0pak|10650, Taiwan, Taipei City, Da’an District, 信義路2段166號東門站
+忠孝新生站|25.0420252|121.5326559|ChIJfRB98nypQjQRIKH2q1YtDI0|100, Taiwan, Taipei City, Zhongzheng District, 忠孝新生站
+松江南京站|25.0512257|121.5327387|ChIJTXwdHGGpQjQRnfLEZSwuzU8|10491, Taiwan, Taipei City, Zhongshan District, 松江南京站
+行天宮站|25.0597176|121.5331847|ChIJlYQez16pQjQRe6yoEpXZXzU|10491, Taiwan, Taipei City, Zhongshan District, 行天宮站
+中山國小站|25.0626122|121.5258505|ChIJkdm6RVupQjQRLOo55q5V9pU|10452, Taiwan, Taipei City, Zhongshan District, Section 1, Minquan E Road71號中山國小站
+捷運民權西路站|25.062905|121.519319|ChIJP-pgUEGpQjQR6gB8XD9FvFU|103, Taiwan, Taipei City, Datong District, 捷運民權西路站
+大橋頭站|25.0630064|121.5135925|ChIJQRJ5VmypQjQRwvCsSW8Y3UQ|10357, Taiwan, Taipei City, Datong District, Minquan W Rd, 223號大橋頭站
+台北橋站|25.063274|121.500762|ChIJn8RjkCKpQjQRBcneshV7mwc|241, Taiwan, New Taipei City, Sanchong District, 台北橋站
+菜寮站|25.060274|121.492156|ChIJWf8yFx6pQjQRHhzXToTUVKs|241, Taiwan, New Taipei City, Sanchong District, 菜寮站
+三重站|25.0557834|121.4844382|ChIJIdXfsuSoQjQRi68tbrVVko4|24161, Taiwan, New Taipei City, Sanchong District, Jieyun Road, 36號三重站
+先嗇宮站|25.046493|121.471916|ChIJ2xvFDV-oQjQRcf19_r-LYl4|241, Taiwan, New Taipei City, Sanchong District, 先嗇宮站
+頭前庄站|25.039705|121.461746|ChIJ72wnWW-oQjQROmwGbl-UEmQ|242, Taiwan, New Taipei City, Xinzhuang District, 頭前庄站
+新莊站|25.036125|121.452468|ChIJ77EQ5nOoQjQRWiWlq2_TuF8|242, Taiwan, New Taipei City, Xinzhuang District, 新莊站
+輔大站|25.032718|121.43547|ChIJ_7olNeanQjQRMlXkiHisOFE|242, Taiwan, New Taipei City, Xinzhuang District, 輔大站
+丹鳳站|25.028893|121.422685|ChIJU3LBtJKnQjQRbkuUQ9-m4Ao|Taiwan, New Taipei City, Xinzhuang District, 242丹鳳站
+捷運迴龍站|25.022107|121.411771|ChIJP94SfIinQjQR4qVAnkZbj0g|242, Taiwan, New Taipei City, Xinzhuang District, 捷運迴龍站
+三重國小站|25.070318|121.496904|ChIJs4JEniapQjQRgaPC0KYPap0|241, Taiwan, New Taipei City, Sanchong District, 三重國小站
+三和國中站|25.076858|121.486346|ChIJH4xZV9eoQjQR-HkUe6hZwqk|241, Taiwan, New Taipei City, Sanchong District, 三和國中站
+徐匯中學站|25.080727|121.479673|ChIJ18va1M-oQjQRRMwxzPdZeCE|247, Taiwan, New Taipei City, Luzhou District, 徐匯中學站
+三民高中站|25.0856485|121.4735279|ChIJe6k95cuoQjQR-RDJE-nYgwA|24760, Taiwan, New Taipei City, Luzhou District, Sanmin Rd105號B1三民高中站
+蘆洲站|25.091553|121.464471|ChIJAXNrxrSoQjQRTsdOCRIRXhA|247, Taiwan, New Taipei City, Luzhou District, 蘆洲站
+頂埔站|24.959332|121.4198624|ChIJ_yVt2OscaDQRj1BAJ1qo7qY|236, Taiwan, New Taipei City, Tucheng District, Section 4, Zhongyang Road, 51號23671 之 6 號 B3頂埔站
+永寧站|24.966726|121.436072|ChIJY1sYMdccaDQRhP5havdXk2Q|236, Taiwan, New Taipei City, Tucheng District, 中央路3段105號永寧站
+土城站|24.9732244|121.4441573|ChIJkd4GPSsdaDQRARYyrx7fj0M|236, Taiwan, New Taipei City, Tucheng District, 土城站
+捷運海山站|24.9853389|121.4487859|ChIJl5yInMsCaDQRDx7XNC4XZPo|236, Taiwan, New Taipei City, Tucheng District, 捷運海山站
+亞東醫院站|24.998095|121.452491|ChIJR19DlLECaDQREiC-UFXMPsM|220, Taiwan, New Taipei City, Banqiao District, 亞東醫院站
+府中站|25.008636|121.459423|ChIJ5auafR2oQjQRgKujkO5nyyE|220, Taiwan, New Taipei City, Banqiao District, 府中站
+捷運板橋站|25.0145999|121.4625299|ChIJw2TA-xuoQjQR8tm_mW_VDUk|220, Taiwan, New Taipei City, Banqiao District, 捷運板橋站
+新埔站|25.0241811|121.4682288|ChIJd3jLihWoQjQRTerPo_jekWs|22047, Taiwan, New Taipei City, Banqiao District, Minsheng RoadB1, No. 2, Sec. 3號新埔站
+江子翠站|25.030009|121.472389|ChIJb782GkGoQjQR0f6EZjJpzQI|220, Taiwan, New Taipei City, Banqiao District, 江子翠站
+龍山寺站|25.0352501|121.5004297|ChIJUYHP2K6pQjQRjYUQWX4zGWQ|108, Taiwan, Taipei City, Wanhua District, 龍山寺站
+捷運西門站|25.0421738|121.5082927|ChIJE0ZOgAmpQjQRt-nR5SlhrYI|10042, Taiwan, Taipei City, Zhongzheng District, Baoqing Rd, 32-1號捷運西門站
+捷運台北車站|25.04636|121.5176048|ChIJneUTn3KpQjQRGGR7w7CKOQg|10041, Taiwan, Taipei City, Zhongzheng District, 忠孝西路1段49號捷運台北車站
+善導寺站|25.0450245|121.5231057|ChIJK6b6TnCpQjQR_4q7CGIoZrw|100, Taiwan, Taipei City, Zhongzheng District, 善導寺站
+忠孝新生站|25.0420252|121.5326559|ChIJfRB98nypQjQRIKH2q1YtDI0|100, Taiwan, Taipei City, Zhongzheng District, 忠孝新生站
+忠孝復興站|25.0409583|121.5437571|ChIJ5aXTptCrQjQRZmjgmU4h9Sk|Taiwan, Taipei City, Da’an District, 10654 忠孝 東路 3 段 302 號 10691 台北 市 大安 區 忠孝 東路 4 段 47 號忠孝復興站
+捷運忠孝敦化站|25.0416218|121.5516552|ChIJh5HYCsWrQjQRYVlmxRjtu9E|Taiwan, Taipei City, Da’an District, 10686Zhongxiao E. RdNo. 182, Sec. 4 號捷運忠孝敦化站
+國父紀念館站|25.0413591|121.5574248|ChIJgTD0CMerQjQRuEohy9I5Jz4|106, Taiwan, Taipei City, Da’an District, 國父紀念館站
+捷運市政府站|25.0411048|121.5659834|ChIJ-dJnWbmrQjQRFpnfhQbM9nA|110, Taiwan, Taipei City, Xinyi District, Section 5, Zhongxiao East Road, 2號捷運市政府站
+永春站|25.040859|121.576292|ChIJXT5G3aOrQjQR0qHZrNj6Qkg|110, Taiwan, Taipei City, Xinyi District, 永春站
+後山埤|25.045054|121.582522|ChIJKV3m2J-rQjQR5cXYLeVGxTc|115, Taiwan, Taipei City, Nangang District, 後山埤
+昆陽站|25.0505117|121.5932518|ChIJWZnqEHCrQjQR7vw2PJf_UFE|115, Taiwan, Taipei City, Nangang District, 昆陽站
+捷運南港站|25.052116|121.606686|ChIJsWjDlF2rQjQR5FnPVKTjO-s|115, Taiwan, Taipei City, Nangang District, 捷運南港站
+南港展覽館站|25.0554052|121.6178521|ChIJWQ7X8VerQjQRa16L1Bd_aa8|115, Taiwan, Taipei City, Nangang District, 南港展覽館站

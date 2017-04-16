@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PR_SummaryData", "PR_Summar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP_Data", "RP_Data\RP_Data.csproj", "{F905C6ED-350D-46C1-9329-501DAD92065A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddMRP", "AddMRP\AddMRP.csproj", "{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F905C6ED-350D-46C1-9329-501DAD92065A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F905C6ED-350D-46C1-9329-501DAD92065A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F905C6ED-350D-46C1-9329-501DAD92065A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
