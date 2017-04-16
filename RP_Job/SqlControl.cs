@@ -60,7 +60,10 @@ namespace RP_Job
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine( ex.Message);
+                            Program.logger.Error($"Insert error: {InsertDtData.Message}");
+                            Program.logger.Error($"Insert error: {InsertDtData.StackTrace}");
+                            Program.logger.Error($"Insert error: {InsertDtData.Source}");
+                            Console.WriteLine(InsertDtData.Message);
                         }
                         
                     }
