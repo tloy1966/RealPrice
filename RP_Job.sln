@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP_Data", "RP_Data\RP_Data.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddMRP", "AddMRP\AddMRP.csproj", "{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPStorage", "RPStorage\RPStorage.csproj", "{3CD89549-4B58-45B4-9F4F-211D43FB9D39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0966C5CF-8CFD-440D-82BA-2A1837ADE2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD89549-4B58-45B4-9F4F-211D43FB9D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD89549-4B58-45B4-9F4F-211D43FB9D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD89549-4B58-45B4-9F4F-211D43FB9D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD89549-4B58-45B4-9F4F-211D43FB9D39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

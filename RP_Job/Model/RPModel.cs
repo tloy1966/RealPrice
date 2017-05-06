@@ -55,6 +55,7 @@ namespace RP_Job.Model
             dt.Columns.Add("isActive", typeof(bool));
             return dt;
         }
+
         public enum DBCol
         {
             ID = -2,
@@ -106,5 +107,9 @@ namespace RP_Job.Model
             ID2_C = 28,
             isActive_C = 29*/
         }
+        
+            
     }
+    
+
 }
