@@ -18,9 +18,8 @@ namespace RP_Job
         {
             GetDataFromFile();
             //testGetCityCode();
-            Console.ReadLine(); 
         }
-        static void testGetCityCode()
+        /*static void testGetCityCode()
         {
             var lstPath = GetData.GetFiles(Path.Combine(Directory.GetCurrentDirectory()), ".xls").OrderByDescending(o => o);
             foreach (var file in lstPath)
@@ -30,16 +29,15 @@ namespace RP_Job
                 logger.Info(file + " test done");
                 logger.Info("------------------------------------------");
             }
-        }
+        }*/
 
         static void GetDataFromFile()
         {
-            var lstPath = GetData.GetFiles(Autho.LocalData.strXLSFolder_2, ".xls").OrderBy(o => o);
+            var lstPath = util.GetFiles(Autho.LocalData.strXLSFolder_2, ".xls").OrderBy(o => o);
             foreach (var file in lstPath)
             {
                 GetData.ReadXLSAndInsert(file, isTest, Model.Para.InsertMode.OneByOne);
                 Console.WriteLine(file);
-                Thread.Sleep(1000);
             }
         }
     }
